@@ -8,6 +8,7 @@
 
 //roman to integer
 
+
 int romanToInt(char * s){
 
     int sum = 0;
@@ -51,6 +52,8 @@ int romanToInt(char * s){
 int main() {
 
     char s [20];
+
+    printf("Ingrese un string");
 
     scanf("%s",s);
 
