@@ -14,10 +14,12 @@ int *inorderTraversal(struct TreeNode *root, int *returnSize)
     struct TreeNode ptr = *root;
 
     inorderTraversal(ptr.left, NULL);
-    printf(ptr.val);
+    printf("%i \n",ptr.val);
 
-    if (ptr.left != NULL)
+    if (ptr.right != NULL)
     {
+        inorderTraversal(ptr.right, NULL);
+        printf("%i \n",ptr.val);
     }
 
     return 0;
@@ -25,6 +27,5 @@ int *inorderTraversal(struct TreeNode *root, int *returnSize)
 
 int main(int argc, char const *argv[])
 {
-    /* code */
     return 0;
 }
