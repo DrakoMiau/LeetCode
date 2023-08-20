@@ -8,18 +8,22 @@ typedef struct TreeNode
     struct TreeNode *right;
 };
 
+int insert(int val, struct TreeNode *root)
+{
+}
+
 int *inorderTraversal(struct TreeNode *root, int *returnSize)
 {
 
-    struct TreeNode ptr = *root;
+    struct TreeNode *ptr = root;
 
-    inorderTraversal(ptr.left, NULL);
-    printf("%i \n",ptr.val);
+    inorderTraversal(ptr->left, NULL);
+    printf("%i \n", ptr->val);
 
     if (ptr.right != NULL)
     {
-        inorderTraversal(ptr.right, NULL);
-        printf("%i \n",ptr.val);
+        inorderTraversal(ptr->right, NULL);
+        printf("%i \n", ptr->val);
     }
 
     return 0;
