@@ -1,34 +1,44 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-using std::vector;
 
-class Solution
+// erase solution
+// int removeDuplicates(vector<int> &nums)
+// {
+//     for (int i = 0; i + 1 < nums.size(); ++i)
+//     {
+//         if (nums[i] == nums[i + 1])
+//         {
+//             nums.erase(nums.begin() + i);
+//             i--;
+//         }
+//     }
+
+//     return nums.size();
+// }
+
+int removeDuplicates(vector<int> &nums)
 {
-public:
-    int removeDuplicates(vector<int> &nums)
+    int iterator = 0;
+    for (int i = 0; i + 1 < nums.size(); ++i)
     {
-        for (int i = 0; i < nums.size(); i++)
+        if (nums[i] != nums[i + 1])
         {
-            if (i < nums.size() - 1 && nums[i] == nums[i + 1])
-            {
-                nums.erase(i + 1);
-            }
+            nums[iterator + 1] = nums[i + 1];
+            iterator++;
         }
     }
-};
-
-int printVector(vector<int> nums)
-{
-    for (int i = 0; i < nums.size(); i++)
-    {
-        std::cout << nums[i] << " ";
-    }
+    return iterator + 1;
 }
 
 int main()
 {
-    std::vector<int> vec;
-    vec.push_back(3);
-    std::cout << vec[0] << " ";
+    vector<int> nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 4};
+    cout << removeDuplicates(nums) << endl;
+    for (int i = 0; i < nums.size(); i++)
+    {
+        cout << nums[i];
+    }
+
+    return 0;
 }
